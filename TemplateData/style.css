@@ -1,14 +1,5 @@
-body { 
-    margin: 0;
-  padding: 0;
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
- }
-#unity-container { position: fixed; width: 100%; height: 100%; }
 #unity-canvas { 
-    position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,6 +9,28 @@ body {
   align-items: center;
   background-color: black;
  }
+    html, body {
+            margin: 0;
+            padding: 0;
+            background-color: black; /* ให้ขอบพื้นหลังเป็นสีดำ */
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* ป้องกัน scroll ถ้ามี content เกิน */
+        }
+
+    #unity-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black; /* กัน canvas ไม่เต็ม ก็ยังดำ */
+    }
+
+    canvas {
+        max-width: 100%;
+        max-height: 100%;
+    }
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
 #unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
 #unity-progress-bar-empty { margin-left: auto; margin-right: auto; width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-dark.png') no-repeat center }
